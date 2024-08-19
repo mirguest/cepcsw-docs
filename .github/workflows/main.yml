@@ -12,16 +12,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: clone
-      run: |
-        git clone https://code.ihep.ac.cn/cepc/CEPCSW.git
-    - name: update
-      run: |
-        rm -rf docs/source
-        cp -r CEPCSW/docs/source docs
-    - name: sync
-      run: |
-        git add docs/source
-        git commit -am "update"
-        git push origin main
+    steps:
+      - name: clone
+        run: |
+          git clone https://code.ihep.ac.cn/cepc/CEPCSW.git
+      - name: update
+        run: |
+          rm -rf docs/source
+          cp -r CEPCSW/docs/source docs
+      - name: sync
+        run: |
+          git add docs/source
+          git commit -am "update"
+          git push origin main
