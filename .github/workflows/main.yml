@@ -13,13 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: clone
         run: |
           git clone https://code.ihep.ac.cn/cepc/CEPCSW.git
+
       - name: update
         run: |
           rm -rf docs/source
           cp -r CEPCSW/docs/source docs
+          
       - name: sync
         run: |
           git add docs/source
